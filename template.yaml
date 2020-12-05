@@ -472,7 +472,7 @@ Outputs:
 
   VueAppAPIRoot:
     Description: API Gateway endpoint URL for linker
-    Value: !GetAtt CloudFrontDistro.DomainName
+    Value: !Sub "https://${SiteAPI}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
  
   VueAppAuthDomain: 
     Description: Domain used for authentication
@@ -495,7 +495,7 @@ Outputs:
     Value: !Sub
       - aws amplify update-app --app-id ${AmplifyID} --environment-variables VUE_APP_NAME=${AppName},VUE_APP_CLIENT_ID=${UserPoolClient},VUE_APP_API_ROOT=${APIRoot},VUE_APP_AUTH_DOMAIN=${APIAuthDomain}
       - AmplifyID: !GetAtt AmplifyApp.AppId
-        APIRoot: !Join ["", [ "https://", !GetAtt CloudFrontDistro.DomainName]]
+        APIRoot: !Sub "https://${SiteAPI}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
         APIAuthDomain: !Sub https://${AppName}-${AWS::AccountId}.auth.${AWS::Region}.amazoncognito.com
 
   AmplifyDeployCommand:
