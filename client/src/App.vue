@@ -58,9 +58,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
               v-bind:href="logOutUrl"
               >Log Out</a
             >
-            <a class="navbar-item" v-if="!authorized" v-bind:href="signUpUrl"
-              >Sign up</a
-            >
             <a class="navbar-item" v-if="!authorized" v-bind:href="logInUrl"
               >Log in</a
             >
