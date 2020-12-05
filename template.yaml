@@ -103,7 +103,9 @@ Resources:
   UserPool:
     Type: AWS::Cognito::UserPool 
     Properties: 
-      UserPoolName: !Sub ${AppName}-UserPool 
+      UserPoolName: !Sub ${AppName}-UserPool
+      AdminCreateUserConfig:
+        AllowAdminCreateUserOnly: True
       Policies: 
         PasswordPolicy: 
           MinimumLength: 8
