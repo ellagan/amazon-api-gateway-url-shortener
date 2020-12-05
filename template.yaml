@@ -472,7 +472,7 @@ Outputs:
 
   VueAppAPIRoot:
     Description: API Gateway endpoint URL for linker
-    Value: !Sub "https://${SiteAPI}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+    Value: !Sub "https://${SiteAPI}.execute-api.${AWS::Region}.amazonaws.com/Prod"
  
   VueAppAuthDomain: 
     Description: Domain used for authentication
